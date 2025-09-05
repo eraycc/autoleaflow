@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-LeafLow Token-Based Check-in Script
+Leaflow Token-Based Check-in Script
 基于预设token/cookie的签到脚本
 适用于服务器环境，无需浏览器
 
@@ -271,7 +271,7 @@ class LeafLowTokenCheckin:
     def run_all_accounts(self):
         """为所有账号执行token签到"""
         self.logger.info("=" * 60)
-        self.logger.info("🔑 LeafLow Token-Based Auto Check-in Started")
+        self.logger.info("🔑 Leaflow Token-Based Auto Check-in Started")
         self.logger.info("=" * 60)
         success_count = 0
         total_count = 0
@@ -313,7 +313,7 @@ class LeafLowTokenCheckin:
 
 def main():
     """主函数"""
-    parser = argparse.ArgumentParser(description='LeafLow Token-Based Auto Check-in Script')
+    parser = argparse.ArgumentParser(description='Leaflow Token-Based Auto Check-in Script')
     parser.add_argument('--config', default='config.accounts.json', help='Configuration file path')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     parser.add_argument('--notify', action='store_true', help='Enable notification push')
@@ -346,7 +346,7 @@ def main():
                         notify_config = json.load(f)
                 
                 # 构建通知内容
-                title = "LeafLow Token-Based Auto Check-in Results"
+                title = "Leaflow Token-Based Auto Check-in Results"
                 content_lines = [f"Token check-in completed: {success_count}/{total_count} successful\n"]
                 
                 for result in results:

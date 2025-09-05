@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-LeafLow Auto Check-in Control Panel
+Leaflow Auto Check-in Control Panel
 Web-based management interface for the check-in system
 """
 
@@ -249,7 +249,7 @@ class CheckinScheduler:
         
         try:
             from notify import send
-            title = f"LeafLow Check-in: {account_name}"
+            title = f"Leaflow Check-in: {account_name}"
             content = f"{'✅ Success' if success else '❌ Failed'}: {message}"
             
             config = {}
@@ -438,7 +438,7 @@ HTML_TEMPLATE = '''
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeafLow Auto Check-in Control Panel</title>
+    <title>Leaflow Auto Check-in Control Panel</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
@@ -503,7 +503,7 @@ HTML_TEMPLATE = '''
 
     <div class="dashboard" id="dashboard">
         <div class="header">
-            <h1>📊 LeafLow Check-in Dashboard</h1>
+            <h1>📊 Leaflow Check-in Dashboard</h1>
             <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
         </div>
 

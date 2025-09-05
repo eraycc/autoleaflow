@@ -1,4 +1,4 @@
-# LeafLow Token Usage Guide
+# Leaflow Token Usage Guide
 
 ## Introduction
 

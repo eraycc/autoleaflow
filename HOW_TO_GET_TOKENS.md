@@ -1,4 +1,4 @@
-# LeafLow Token 使用指南
+# Leaflow Token 使用指南
 
 ## 简介
 
@@ -141,7 +141,7 @@ python3 checkin_token.py --notify
 
 ### Chrome 浏览器示例
 
-1. 登录 LeafLow 后，按 F12
+1. 登录 Leaflow 后，按 F12
 2. Network 标签页，访问任意页面
 3. 找到页面请求，右键选择 "Copy as cURL"
 4. 从 cURL 命令中提取 cookies：

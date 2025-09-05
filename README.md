@@ -1,4 +1,4 @@
-# LeafLow 自动签到脚本
+# Leaflow 自动签到脚本
 
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -6,7 +6,7 @@
 
 [English](README_EN.md) | [简体中文](#简体中文)
 
-LeafLow 自动签到脚本，支持多账号批量签到，使用 Token-based 认证方式，适合在服务器环境中稳定运行。
+Leaflow 自动签到脚本，支持多账号批量签到，使用 Token-based 认证方式，适合在服务器环境中稳定运行。
 
 # 新增功能：app.py（使用控制面板添加多账户）
 ## 环境变量说明
@@ -88,7 +88,7 @@ pip3 install -r requirements.txt
 
 #### 方法A：手动获取（推荐新手）
 
-1. 在浏览器中登录 [LeafLow](https://leaflow.net)
+1. 在浏览器中登录 [Leaflow](https://leaflow.net)
 2. 按 `F12` 打开开发者工具，切换到 `Network`（网络）标签页
 3. 刷新页面，在请求列表中找到主站的请求（例如 `leaflow.net`）
 4. 在右侧的 `Headers` 标签页中，找到 `Request Headers` 下的 `cookie` 字段，并复制其完整内容。
@@ -236,7 +236,7 @@ crontab -e
 #### `checkin.yml` 示例:
 
 ```yaml
-name: LeafLow Auto Checkin
+name: Leaflow Auto Checkin
 
 on:
   schedule:
@@ -376,13 +376,13 @@ python3 checkin_token.py --debug
 ## ⚠️ 免责声明
 
 - 本脚本仅供学习和研究使用
-- 请遵守 LeafLow 网站的使用条款
+- 请遵守 Leaflow 网站的使用条款
 - 使用本脚本造成的任何后果由用户自行承担
 - 请合理使用，避免对服务器造成过大压力
 
 ## 🙏 致谢
 
-- [LeafLow](https://leaflow.net) - 容器化部署平台
+- [Leaflow](https://leaflow.net) - 容器化部署平台
 - [Hitokoto](https://hitokoto.cn) - 一言 API 服务
 
 ---

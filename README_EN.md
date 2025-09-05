@@ -1,4 +1,4 @@
-# LeafLow Auto Check-in Script
+# Leaflow Auto Check-in Script
 
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -6,7 +6,7 @@
 
 [English](#english) | [简体中文](README.md)
 
-An automated check-in script for LeafLow that supports multi-account batch operations using Token-based authentication, designed to run stably in server environments.
+An automated check-in script for Leaflow that supports multi-account batch operations using Token-based authentication, designed to run stably in server environments.
 
 ## ✨ Features
 
@@ -33,7 +33,7 @@ pip3 install -r requirements.txt
 
 Use browser developer tools to get Cookies:
 
-1. Login to [LeafLow](https://leaflow.net) in your browser
+1. Login to [Leaflow](https://leaflow.net) in your browser
 2. Press `F12` to open developer tools
 3. Switch to "Network" tab
 4. Visit any page that requires login
@@ -143,7 +143,7 @@ crontab -e
 Create `.github/workflows/checkin.yml`:
 
 ```yaml
-name: LeafLow Auto Checkin
+name: Leaflow Auto Checkin
 
 on:
   schedule:
@@ -278,13 +278,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ⚠️ Disclaimer
 
 - This script is for learning and research purposes only
-- Please comply with LeafLow website's terms of use
+- Please comply with Leaflow website's terms of use
 - Users are responsible for any consequences of using this script
 - Please use reasonably and avoid putting excessive pressure on servers
 
 ## 🙏 Acknowledgments
 
-- [LeafLow](https://leaflow.net) - Container deployment platform
+- [Leaflow](https://leaflow.net) - Container deployment platform
 - [Hitokoto](https://hitokoto.cn) - Hitokoto API service
 
 ---
