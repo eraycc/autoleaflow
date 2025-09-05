@@ -8,6 +8,61 @@
 
 LeafLow 自动签到脚本，支持多账号批量签到，使用 Token-based 认证方式，适合在服务器环境中稳定运行。
 
+# 新增功能：app.py（使用控制面板添加多账户）
+## 环境变量说明
+
+| 环境变量 | 说明 | 默认值 |
+|---------|------|--------|
+| `PORT` | Web控制面板端口 | `8181` |
+| `ADMIN_USERNAME` | 管理员用户名 | `admin` |
+| `ADMIN_PASSWORD` | 管理员密码 | `admin123` |
+| `JWT_SECRET_KEY` | JWT密钥（留空自动生成） | 自动生成 |
+| `DB_TYPE` | 数据库类型 (sqlitel) | `sqlite` |
+
+## 主要功能特性
+
+1. **Web控制面板**：监听8181端口，提供完整的Web管理界面
+2. **JWT认证**：7天有效期的安全认证机制
+3. **账户管理**：支持添加、删除、启用/禁用账户
+4. **定时签到**：每个账户可设置独立的签到时间
+5. **签到历史**：记录所有签到历史和统计信息
+6. **通知管理**：支持Telegram和企业微信通知配置
+7. **数据持久化**：支持SQLite数据库
+
+## 使用方法
+
+1. **构建并运行Docker容器**：
+```bash
+docker build -t leaflow-checkin .
+docker run -d -p 8181:8181 \
+  -e ADMIN_USERNAME=username \
+  -e ADMIN_PASSWORD=password \
+  -e DB_TYPE=sqlite \
+  --name leaflow-checkin \
+  leaflow-checkin
+```
+
+2. **访问控制面板**：
+   - 打开浏览器访问 `http://localhost:8181`
+   - 使用设置的用户名密码登录
+
+3. **添加账户**：
+   - 登录后点击"Add Account"
+   - 输入账户名称和token数据
+   - 设置每日签到时间
+
+## 添加账户cookie格式
+```
+{
+  "cookies": {
+    "leaflow_session": "eyJpdiI6IkxXVEF4M2FTNHNvZTl3PT0iLCJ2YWx1ZSI6ImtxNDNTYW1XNnp5UT09IiwibWFjIjoiYzE5ZDA3NTk2ZjdhIn0%3D",
+    "remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d": "10079%7CqKUDfZrP8MxVnL3mJKtGOabc123456789",
+    "XSRF-TOKEN": "eyJpdiI6Ik5PbElabc123456789"
+  }
+}
+多个账户依次添加如上格式cookie即可
+```
+
 ## ✨ 特性
 
 - 🔐 **Token-based 认证**：基于 Cookie/Token 认证，绕过复杂的登录流程
@@ -338,51 +393,3 @@ python3 checkin_token.py --debug
 
 *本文档默认为中文版本，英文版本请查看 [README_EN.md](README_EN.md)*
 
-# 新增功能：app.py
-## 环境变量说明
-
-| 环境变量 | 说明 | 默认值 |
-|---------|------|--------|
-| `PORT` | Web控制面板端口 | `8181` |
-| `ADMIN_USERNAME` | 管理员用户名 | `admin` |
-| `ADMIN_PASSWORD` | 管理员密码 | `admin123` |
-| `JWT_SECRET_KEY` | JWT密钥（留空自动生成） | 自动生成 |
-| `DB_TYPE` | 数据库类型 (sqlite/mysql) | `sqlite` |
-| `DB_HOST` | MySQL主机地址 | `localhost` |
-| `DB_PORT` | MySQL端口 | `3306` |
-| `DB_NAME` | MySQL数据库名 | `leaflow_checkin` |
-| `DB_USER` | MySQL用户名 | `root` |
-| `DB_PASSWORD` | MySQL密码 | 空 |
-
-## 主要功能特性
-
-1. **Web控制面板**：监听8181端口，提供完整的Web管理界面
-2. **JWT认证**：7天有效期的安全认证机制
-3. **账户管理**：支持添加、删除、启用/禁用账户
-4. **定时签到**：每个账户可设置独立的签到时间
-5. **签到历史**：记录所有签到历史和统计信息
-6. **通知管理**：支持Telegram和企业微信通知配置
-7. **数据持久化**：支持SQLite和MySQL数据库
-
-## 使用方法
-
-1. **构建并运行Docker容器**：
-```bash
-docker build -t leaflow-checkin .
-docker run -d -p 8181:8181 \
-  -e ADMIN_PASSWORD=your_secure_password \
-  -v $(pwd)/data:/app/data \
-  --name leaflow-checkin \
-  leaflow-checkin
-```
-
-2. **访问控制面板**：
-   - 打开浏览器访问 `http://localhost:8181`
-   - 使用设置的用户名密码登录
-
-3. **添加账户**：
-   - 登录后点击"Add Account"
-   - 输入账户名称和token数据
-   - 设置每日签到时间
-
-这个解决方案完全解决了Docker容器重启的问题，因为现在应用程序作为一个持续运行的Web服务存在。
