@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  leaflow-checkin:
+    build: .
+    container_name: leaflow-checkin
+    ports:
+      - "8181:8181"
+    environment:
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=your_secure_password
+      - JWT_SECRET_KEY=your_jwt_secret_key
+      - DB_TYPE=sqlite
+      # MySQL配置（可选）
+      # - DB_TYPE=mysql
+      # - DB_HOST=mysql
+      # - DB_PORT=3306
+      # - DB_NAME=leaflow_checkin
+      # - DB_USER=root
+      # - DB_PASSWORD=mysql_password
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+
+  # MySQL服务（可选）
+  # mysql:
+  #   image: mysql:8.0
+  #   container_name: leaflow-mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=mysql_password
+  #     - MYSQL_DATABASE=leaflow_checkin
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   restart: unless-stopped
+
+volumes:
+  mysql_data:
