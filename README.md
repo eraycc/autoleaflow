@@ -1,6 +1,6 @@
 # LeafLow 自动签到脚本
 当前版本已弃用，最新版控制面板版本（支持docker）请访问：
-https://github.com/stsix/leaflow-auto-beta
+[https://github.com/eraycc/leaflow-auto](https://github.com/eraycc/leaflow-auto)
 
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -394,5 +394,6 @@ python3 checkin_token.py --debug
 ## 简体中文
 
 *本文档默认为中文版本，英文版本请查看 [README_EN.md](README_EN.md)*
+
 
 
